@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Automate Mastery | Plataforma Interactiva de Aprendizaje</title>
+  <meta name="description" content="Aprende y domina Power Automate desde cero hasta nivel empresarial: Triggers, Conectores, JSON, APIs REST, Spring Boot, Excel, SharePoint y Manejo de Errores.">
+
+  <!-- Phosphor Icons para interfaz moderna y liviana -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Estilos del Sistema de Diseño -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Overlay para cerrar el menú lateral en dispositivos móviles al tocar fuera -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <div class="app-layout">
+    <!-- PANEL LATERAL DE NAVEGACIÓN (SIDEBAR) -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon-box">
+          <i class="ph-bold ph-lightning"></i>
+        </div>
+        <div class="brand-text">
+          <h1>PA Mastery</h1>
+          <p>Enterprise Automation</p>
+        </div>
+      </div>
+
+      <!-- Barra de Progreso Global -->
+      <div class="sidebar-progress-box">
+        <div class="progress-header">
+          <span>Tu Progreso</span>
+          <span class="pct" id="overall-progress-pct">0%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="overall-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Buscador de Lecciones -->
+      <div class="sidebar-search">
+        <div class="search-wrapper">
+          <i class="ph-bold ph-magnifying-glass"></i>
+          <input type="text" id="search-lessons-input" class="search-input" placeholder="Buscar concepto o lección...">
+        </div>
+      </div>
+
+      <!-- Lista Acordeón de Módulos y Lecciones -->
+      <nav class="sidebar-nav" id="nav-modules-list">
+        <!-- Generado dinámicamente por app.js -->
+      </nav>
+
+      <!-- Herramientas Interactivas y Utilidades -->
+      <div class="sidebar-tools">
+        <button class="tool-btn" data-tool="simulator">
+          <i class="ph-bold ph-tree-structure"></i>
+          <span>Simulador de Flujos</span>
+        </button>
+        <button class="tool-btn" data-tool="flashcards">
+          <i class="ph-bold ph-cards"></i>
+          <span>Tarjetas de Memoria</span>
+        </button>
+        <button class="tool-btn" data-tool="glossary">
+          <i class="ph-bold ph-book-open"></i>
+          <span>Glosario Técnico</span>
+        </button>
+        <button class="tool-btn" data-tool="bookmarks">
+          <i class="ph-bold ph-bookmark-simple"></i>
+          <span>Lecciones Marcadas</span>
+        </button>
+        <button class="tool-btn" id="reset-progress-btn" style="color: var(--text-dim); margin-top: 4px;">
+          <i class="ph-bold ph-arrows-counter-clockwise"></i>
+          <span>Reiniciar Progreso</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL DE ESTUDIO -->
+    <main class="app-main">
+      <!-- Barra Superior de Navegación -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Abrir menú">
+            <i class="ph-bold ph-list"></i>
+          </button>
+          <div class="current-path">
+            <span id="breadcrumb-mod">Módulo 1</span>
+            <i class="ph-bold ph-caret-right"></i>
+            <span class="current" id="breadcrumb-les">1.1 ¿Qué es Power Automate?</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn" id="bookmark-toggle-btn" title="Marcar esta lección">
+            <i class="ph-bold ph-bookmark-simple"></i>
+          </button>
+          <button class="icon-btn" id="theme-toggle-btn" title="Cambiar Modo Claro/Oscuro">
+            <i class="ph-bold ph-sun"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Contenedor del Contenido de la Lección -->
+      <div class="content-wrapper">
+        <div id="lesson-view">
+          <!-- Inyectado dinámicamente por app.js -->
+        </div>
+
+        <!-- Vista de Herramientas Especiales (Simulador / Flashcards / Glosario) -->
+        <div class="tools-view-container" id="tools-view">
+          <!-- Inyectado dinámicamente por app.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts de la Aplicación -->
+  <script src="js/content.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
